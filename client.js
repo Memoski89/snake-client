@@ -1,5 +1,5 @@
 const net = require('net');
-const stdin = process.stdin;
+
 /**
  * Establishes connection with the game server
  */
@@ -10,14 +10,16 @@ const connect = function() {
   });
   conn.on('connect', ()=>{
     console.log('Successfully connected to game server')
-    conn.write("Name: 8=D")
-  
+    conn.write("Name: !!!")
+/*     conn.write("Move: up")
+    conn.write("Move: up")
+    conn.write("Move: up")
+    conn.write("Move: up")
+    conn.write("Move: up") */
   })
   
-  /* stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  stdin.on("data", (key) => {
+
+/*   stdin.on("data", (key) => {
     if (key === "w") {
       conn.write("Move: up");
     } else if (key === "d") {
@@ -26,8 +28,8 @@ const connect = function() {
       conn.write('Move: left');
     } else if (key === 's'){
       conn.write("Move: down")
-    }
-  }) */
+    } 
+ }) */
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
   conn.on('data', (data) => { // when client gets data write on screen//
